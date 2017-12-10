@@ -9,10 +9,15 @@ import styles from "../assets/styles/base/_header.module.styl";
 import containerStyles from "../assets/styles/base/_wrapper.module.styl";
 
 const ListLink = props => {
-  const { header__link } = styles;
+  const { header__link, header__link_expand } = styles;
 
   return (
-    <li key={props.to} className={header__link}>
+    <li
+      key={props.to}
+      className={
+        props.expand ? `${header__link} ${header__link_expand}` : header__link
+      }
+    >
       <Link to={props.to}>{props.children}</Link>
     </li>
   );
@@ -65,9 +70,15 @@ class Header extends Component {
               }
             >
               <ul className={header__linklist}>
-                <ListLink to="/">Home</ListLink>
-                <ListLink to="/tags/">All Tags</ListLink>
-                <ListLink to="/about/">About</ListLink>
+                <ListLink to="/" expand={this.state.isMobileMenuOpen}>
+                  Home
+                </ListLink>
+                <ListLink to="/tags/" expand={this.state.isMobileMenuOpen}>
+                  All Tags
+                </ListLink>
+                <ListLink to="/about/" expand={this.state.isMobileMenuOpen}>
+                  About
+                </ListLink>
               </ul>
             </div>
           </div>

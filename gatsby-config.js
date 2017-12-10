@@ -1,3 +1,5 @@
+const autoprefixer = require("autoprefixer-stylus");
+
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
@@ -6,6 +8,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-stylus`,
+      options: {
+        use: [autoprefixer()]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.js`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

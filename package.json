@@ -14,7 +14,8 @@
     "gatsby-transformer-remark": "^1.7.23",
     "normalize-styl": "^4.1.1",
     "typography-theme-alton": "^0.15.10",
-    "typography-theme-ocean-beach": "^0.15.11"
+    "gray-percentage": "^2.0.0",
+    "typography-breakpoint-constants": "^0.15.10"
   },
   "keywords": ["gatsby"],
   "license": "MIT",
